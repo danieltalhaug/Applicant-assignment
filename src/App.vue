@@ -5,16 +5,22 @@
       <Searchbar/>
     </header>
     <main>
-      <section class="cards-container" v-for="(card, index) in cards" :key="index">
-        <RentalCards
-          :title="card.title"
-          :price="card.price"
-          :image="card.imageUrl"
-          :persons="card.persons"
-          :doors="card.doors"
-          :liters="card.liters"
-          :description="card.description"
-        />
+      <section v-if="cardsIsPopulated">
+         <div class="cards-container" v-for="(card, index) in cards" :key="index">
+          <RentalCards
+            :title="card.title"
+            :price="card.price"
+            :image="card.imageUrl"
+            :persons="card.persons"
+            :doors="card.doors"
+            :liters="card.liters"
+            :description="card.description"
+          />
+        </div>
+        <span class="cards-counter">Showing {{cards.length}} results</span>
+      </section>
+      <section v-else>
+        <p class="cards-error">{{ errorMessage }}</p>
       </section>
     </main>
   </div>
@@ -64,7 +70,9 @@ export default {
           description: 'Nissan Kicks compact crossover quickly established a reputation for offering an impressive array of class-leading features with equally attractive value. Introduced three years ago in the U.S. as the entry model to Nissan\'s lineup of six crossovers and SUVs, Kicks has attracted young, enthusiastic new buyers to the brand.'
         }
       ],
-      searchWord: ''
+      searchWord: '',
+      cardsIsPopulated: false,
+      errorMessage: 'Can\'t find a car based on your search, please try a different search.'
     }
   }
 }
@@ -119,5 +127,16 @@ img {
 main {
   background-color: var(--grey-light);
   padding: var(--spacing-small);
+  min-height: 100vh;
+}
+.cards-counter {
+  display: flex;
+  justify-content: flex-end;
+}
+.cards-error {
+  text-align: center;
+  color: var(--blue-dark);
+  font-size: var(--text-medium);
+  padding-top: 50px;
 }
 </style>

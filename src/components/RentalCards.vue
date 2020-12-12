@@ -27,7 +27,7 @@
 export default {
   name: 'RentalCards',
   props: {
-    title: String,
+    card: Array,
     price: Number,
     image: String,
     persons: Number,
@@ -86,7 +86,7 @@ export default {
     /* Adds the grey line between details and booking containers. It's a bit rough and little versatile */
         content: "";
         position: relative;
-        background-color: var(--grey-medium);
+        background-color: var(--grey-light);
         width: 2px;
         height: 160px;
         top: 155px;
