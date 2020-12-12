@@ -21,10 +21,11 @@ export default {
 <style>
 :root {
   --blue-dark: #22313F;
+  --blue-medium: #486885;
   --grey-light: #F6F6F6;
   --grey-medium: #A3A3A3;
   --green-medium: #5DAC6E;
-  --spacing-medium: 10px;
+  --spacing-small: 10px;
   --border-radius: 5px;
 }
 html {

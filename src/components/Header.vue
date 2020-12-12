@@ -21,17 +21,17 @@ export default {
     }
     .header__logo {
         color: white;
-        padding: var(--spacing-medium);
+        padding: var(--spacing-small);
     }
     .header__button {
         background: none;
-        padding: var(--spacing-medium);
+        padding: var(--spacing-small);
         border: none;
         color: white;
         font-size: 1em;
     }
     .header__button:hover {
         cursor: pointer;
-        color: var(--grey-medium);
+        color: var(--grey-small);
     }
 </style>
