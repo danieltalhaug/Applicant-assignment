@@ -1,8 +1,8 @@
 <template>
-    <header class="header">
+    <div class="header">
         <h1 class="header__logo">Cars2go</h1>
         <button class="header__button">+ Add new car</button>
-    </header>
+    </div>
 </template>
 
 <script>

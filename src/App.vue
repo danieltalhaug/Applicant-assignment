@@ -1,18 +1,22 @@
 <template>
   <div id="app">
-    <Header/>
-    <Searchbar/>
-    <section v-for="(card, index) in cards" :key="index">
-      <RentalCards
-        :title="card.title"
-        :price="card.price"
-        :image="card.imageUrl"
-        :persons="card.persons"
-        :doors="card.doors"
-        :liters="card.liters"
-        :description="card.description"
-      />
-    </section>
+    <header>
+      <Header/>
+      <Searchbar/>
+    </header>
+    <main>
+      <section class="cards-container" v-for="(card, index) in cards" :key="index">
+        <RentalCards
+          :title="card.title"
+          :price="card.price"
+          :image="card.imageUrl"
+          :persons="card.persons"
+          :doors="card.doors"
+          :liters="card.liters"
+          :description="card.description"
+        />
+      </section>
+    </main>
   </div>
 </template>
 
@@ -34,7 +38,7 @@ export default {
       cards: [
         {
           title: '2020 Toyota GR Yaris',
-          price: 1500,
+          price: 1900,
           imageUrl: 'https://www.netcarshow.com/Toyota-GR_Yaris-2021-1600-98.jpg',
           persons: 2,
           doors: 3,
@@ -43,7 +47,7 @@ export default {
         },
         {
           title: '2021 Volkswagen Golf R',
-          price: 900,
+          price: 1200,
           imageUrl: 'https://www.netcarshow.com/Volkswagen-Golf_R-2022-1600-12.jpg',
           persons: 5,
           doors: 5,
@@ -52,7 +56,7 @@ export default {
         },
         {
           title: '2021 Nissan Kicks',
-          price: 500,
+          price: 1800,
           imageUrl: 'https://www.netcarshow.com/Nissan-Kicks-2021-1600-08.jpg',
           persons: 5,
           doors: 5,
@@ -74,11 +78,18 @@ export default {
   --grey-medium: #A3A3A3;
   --green-medium: #5DAC6E;
   --spacing-small: 10px;
+  --spacing-medium: 20px;
   --border-radius: 5px;
+  --text-small: .8em;
+  --text-medium: 1em;
+  --text-large: 2em;
+  --text-huge: 3em;
+  --weight-heavy: 600;
+  --weight-medium: 400;
+  --weight-light: 300;
 }
 html {
   box-sizing: border-box;
-  font-size: 1em;
   font-family: Roboto;
 }
 
@@ -94,6 +105,7 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   margin: 0;
   padding: 0;
   font-weight: normal;
+  color: var(--blue-dark);
 }
 
 ol, ul {
@@ -103,5 +115,9 @@ ol, ul {
 img {
   max-width: 100%;
   height: auto;
+}
+main {
+  background-color: var(--grey-light);
+  padding: var(--spacing-small);
 }
 </style>
