@@ -1,7 +1,7 @@
 <template>
     <header class="header">
         <h1 class="header__logo">Cars2go</h1>
-        <button>+ Add new car</button>
+        <button class="header__button">+ Add new car</button>
     </header>
 </template>
 
@@ -21,5 +21,17 @@ export default {
     }
     .header__logo {
         color: white;
+        padding: 15px;
+    }
+    .header__button {
+        background: none;
+        padding: 15px;
+        border: none;
+        color: white;
+        font-size: 1em;
+    }
+    .header__button:hover {
+        cursor: pointer;
+        color: #ddd;
     }
 </style>
