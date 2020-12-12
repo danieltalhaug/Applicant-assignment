@@ -86,7 +86,7 @@ export default {
   },
   methods: {
     setSearchInputValue (searchword) {
-      // Gets the searchword from searchbar component and saves it
+      // Gets the searchword from searchbar component and saves it. No mutated props!
       this.searchQuery = searchword
     }
   }
