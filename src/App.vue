@@ -2,9 +2,17 @@
   <div id="app">
     <Header/>
     <Searchbar/>
-    <main>
-      <RentalCards/>
-    </main>
+    <section v-for="(card, index) in cards" :key="index">
+      <RentalCards
+        :title="card.title"
+        :price="card.price"
+        :image="card.imageUrl"
+        :persons="card.persons"
+        :doors="card.doors"
+        :liters="card.liters"
+        :description="card.description"
+      />
+    </section>
   </div>
 </template>
 
