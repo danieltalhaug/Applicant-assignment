@@ -32,6 +32,6 @@ export default {
     }
     .header__button:hover {
         cursor: pointer;
-        color: var(--grey-small);
+        color: var(--blue-medium);
     }
 </style>
