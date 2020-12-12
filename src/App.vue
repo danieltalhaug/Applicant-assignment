@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <Header/>
   </div>
 </template>
 
 <script>
+import Header from "./components/Header.vue"
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Header
+  }
 }
 </script>
 
@@ -19,6 +23,10 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit;
+}
+#app {
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
