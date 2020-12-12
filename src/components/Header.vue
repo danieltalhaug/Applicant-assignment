@@ -14,24 +14,24 @@ export default {
 <style scoped>
     .header {
         height: 100px;
-        background-color: #22313F;
+        background-color: var(--blue-dark);
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
     .header__logo {
         color: white;
-        padding: 15px;
+        padding: var(--spacing-medium);
     }
     .header__button {
         background: none;
-        padding: 15px;
+        padding: var(--spacing-medium);
         border: none;
         color: white;
         font-size: 1em;
     }
     .header__button:hover {
         cursor: pointer;
-        color: #ddd;
+        color: var(--grey-medium);
     }
 </style>

@@ -19,6 +19,14 @@ export default {
 </script>
 
 <style>
+:root {
+  --blue-dark: #22313F;
+  --grey-light: #F6F6F6;
+  --grey-medium: #A3A3A3;
+  --green-medium: #5DAC6E;
+  --spacing-medium: 10px;
+  --border-radius: 5px;
+}
 html {
   box-sizing: border-box;
   font-size: 1em;
