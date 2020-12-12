@@ -2,11 +2,13 @@
   <div id="app">
     <header>
       <Header/>
-      <Searchbar/>
+      <Searchbar
+        @getSearchWord="setSearchInputValue"
+      />
     </header>
     <main>
-      <section v-if="cardsIsPopulated">
-         <div class="cards-container" v-for="(card, index) in cards" :key="index">
+      <section v-if="filterCards.length">
+         <div class="cards-container" v-for="(card, index) in filterCards" :key="index">
           <RentalCards
             :title="card.title"
             :price="card.price"
@@ -17,7 +19,7 @@
             :description="card.description"
           />
         </div>
-        <span class="cards-counter">Showing {{cards.length}} results</span>
+        <span class="cards-counter">Showing {{filterCards.length}} results</span>
       </section>
       <section v-else>
         <p class="cards-error">{{ errorMessage }}</p>
@@ -70,9 +72,22 @@ export default {
           description: 'Nissan Kicks compact crossover quickly established a reputation for offering an impressive array of class-leading features with equally attractive value. Introduced three years ago in the U.S. as the entry model to Nissan\'s lineup of six crossovers and SUVs, Kicks has attracted young, enthusiastic new buyers to the brand.'
         }
       ],
-      searchWord: '',
-      cardsIsPopulated: false,
+      searchQuery: '',
       errorMessage: 'Can\'t find a car based on your search, please try a different search.'
+    }
+  },
+  computed: {
+    filterCards: function () {
+      // Filters cards based on search input from user and returns it
+      return this.cards.filter((card) => {
+        return card.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+      })
+    }
+  },
+  methods: {
+    setSearchInputValue (searchword) {
+      // Gets the searchword from searchbar component and saves it
+      this.searchQuery = searchword
     }
   }
 }

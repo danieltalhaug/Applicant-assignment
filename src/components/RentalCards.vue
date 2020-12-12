@@ -27,7 +27,7 @@
 export default {
   name: 'RentalCards',
   props: {
-    card: Array,
+    title: String,
     price: Number,
     image: String,
     persons: Number,

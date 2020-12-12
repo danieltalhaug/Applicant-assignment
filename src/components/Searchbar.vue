@@ -1,13 +1,26 @@
 <template>
-    <form class="searchbar">
-      <input class="searchbar__field" type="text" placeholder="Search" name="search">
-      <button class="searchbar__button" type="submit">Search</button>
+    <form v-on:submit.prevent class="searchbar" >
+      <input
+        v-model="searchword"
+        class="searchbar__field" type="text" placeholder="Search" name="search">
+      <button @click="sendSearchWord" class="searchbar__button" type="submit">Search</button>
     </form>
 </template>
 
 <script>
 export default {
-  name: 'Searchbar'
+  name: 'Searchbar',
+  data () {
+    return {
+      searchword: ''
+    }
+  },
+  methods: {
+    sendSearchWord: function () {
+      // sends the searchword to parent
+      this.$emit('getSearchWord', this.searchword)
+    }
+  }
 }
 </script>
 
