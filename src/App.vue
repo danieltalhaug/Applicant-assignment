@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Header from "./components/Header.vue"
+import Header from './components/Header.vue'
 
 export default {
   name: 'App',
@@ -19,6 +19,7 @@ export default {
 html {
   box-sizing: border-box;
   font-size: 16px;
+  font-family: Roboto;
 }
 
 *, *:before, *:after {
