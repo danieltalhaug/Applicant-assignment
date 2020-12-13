@@ -18,7 +18,7 @@
         <div class="card__book">
             <span class="card__book__price">${{ price }}</span>
             <button class="card__book__button">Book Now</button>
-            <button class="card__delete__button">Delete car</button>
+            <button @click="removeCard" class="card__delete__button">Delete car</button>
         </div> <!-- Price end -->
     </div><!-- Card end -->
 </template>
@@ -33,7 +33,13 @@ export default {
     persons: Number,
     doors: Number,
     liters: Number,
-    description: String
+    description: String,
+    index: Number
+  },
+  methods: {
+    removeCard (index) {
+      this.$emit('removeCard', this.index)
+    }
   }
 }
 </script>

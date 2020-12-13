@@ -19,6 +19,8 @@
             :doors="card.doors"
             :liters="card.liters"
             :description="card.description"
+            :index="index"
+            @removeCard="removeCard"
           />
         </div> <!-- v-for end -->
         <span class="cards-counter">Showing {{filterCards.length}} results</span>
@@ -110,6 +112,10 @@ export default {
     },
     openModal () {
       this.showModal = true
+    },
+    removeCard (index) {
+      // gets the index from RentalCards.vue and deletes it from the cards array
+      this.cards.splice(index, 1)
     }
   }
 }
