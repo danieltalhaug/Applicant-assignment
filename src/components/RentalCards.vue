@@ -118,7 +118,7 @@ export default {
     padding: var(--spacing-medium);
     background-color: var(--blue-dark);
     border: 2px solid var(--blue-dark);
-    color: var(--grey-light);
+    color: var(--grey-lighter);
     border-radius: var(--border-radius);
     font-size: var(--text-medium)
 }

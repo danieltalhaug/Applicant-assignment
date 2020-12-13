@@ -125,8 +125,9 @@ export default {
 :root {
   --blue-dark: #22313F;
   --blue-medium: #486885;
-  --grey-light: #F6F6F6;
-  --grey-medium: #A3A3A3;
+  --grey-lighter: #F6F6F6;
+  --grey-light: #949494;
+  --grey-medium: #575757;
   --green-medium: #5DAC6E;
   --spacing-small: 10px;
   --spacing-medium: 20px;
@@ -168,7 +169,7 @@ img {
   height: auto;
 }
 main {
-  background-color: var(--grey-light);
+  background-color: var(--grey-lighter);
   padding: var(--spacing-small);
   min-height: 100vh;
 }

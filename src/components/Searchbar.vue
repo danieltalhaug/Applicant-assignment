@@ -44,7 +44,7 @@ export default {
     padding: var(--spacing-small) 30px var(--spacing-small) 30px;
     margin-left: var(--spacing-small);
     background-color: var(--blue-dark);
-    color: var(--grey-light);
+    color: var(--grey-lighter);
     border-radius: var(--border-radius);
     border: solid 2px var(--blue-dark);
 }
