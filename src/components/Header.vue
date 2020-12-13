@@ -1,13 +1,18 @@
 <template>
     <div class="header">
         <h1 class="header__logo">Cars2go</h1>
-        <button class="header__button">+ Add new car</button>
+        <button @click="openModal" class="header__button">+ Add new car</button>
     </div>
 </template>
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  methods: {
+    openModal () {
+      this.$emit('openModal', true)
+    }
+  }
 }
 </script>
 

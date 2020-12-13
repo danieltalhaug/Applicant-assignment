@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <header>
-      <Header/>
+      <Header
+        @openModal="openModal"
+      />
       <Searchbar
         @getSearchWord="setSearchInputValue"
       />
@@ -26,6 +28,8 @@
       </section>
     </main>
     <NewCarModal
+      v-if="showModal"
+      @closeForm="closeModal"
       @addNewCar="getNewCarData">
     /></NewCarModal>
   </div>
@@ -79,7 +83,8 @@ export default {
       ],
       searchQuery: '',
       newCar: {},
-      errorMessage: 'Can\'t find a car based on your search, please try a different search.'
+      errorMessage: 'Can\'t find a car based on your search, please try a different search.',
+      showModal: false
     }
   },
   computed: {
@@ -97,8 +102,14 @@ export default {
     },
     getNewCarData (formData) {
       // adds the incoming formData from the NewCarModal to the cars array.
-      this.newCar = formData
-      this.cards.push(this.newCar)
+      this.cards.push(formData)
+    },
+    closeModal () {
+      // closes the modal when requested in the NewCarModal component
+      this.showModal = false
+    },
+    openModal () {
+      this.showModal = true
     }
   }
 }

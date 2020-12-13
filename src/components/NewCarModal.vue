@@ -29,7 +29,7 @@
                 <textarea v-model="formData.description" rows="4" cols="50" placeholder="Description"></textarea>
             </div><!-- Modal body end-->
             <div class="modal__content__footer">
-                <button class="modal__button modal__button--white">Cancel</button>
+                <button @click="closeForm" class="modal__button modal__button--white">Cancel</button>
                 <button @click="submitForm" class="modal__button modal__button--blue">Submit</button>
             </div><!-- Modal footer -->
         </div><!-- Modal content end -->
@@ -55,6 +55,9 @@ export default {
   methods: {
     submitForm (event) {
       this.$emit('addNewCar', this.formData)
+    },
+    closeForm (event) {
+      this.$emit('closeForm', true)
     }
   }
 }
