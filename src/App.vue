@@ -3,10 +3,10 @@
     <header>
       <Header
         @openModal="openModal"
-      />
+      /> <!-- header component end -->
       <Searchbar
         @getSearchWord="setSearchInputValue"
-      />
+      /> <!-- searchbar component end -->
     </header>
     <main>
       <section v-if="filterCards.length">
@@ -20,19 +20,19 @@
             :liters="card.liters"
             :description="card.description"
           />
-        </div>
+        </div> <!-- v-for end -->
         <span class="cards-counter">Showing {{filterCards.length}} results</span>
-      </section>
+      </section> <!-- cards section end -->
       <section v-else>
         <p class="cards-error">{{ errorMessage }}</p>
-      </section>
+      </section> <!-- error message end -->
     </main>
     <NewCarModal
       v-if="showModal"
       @closeForm="closeModal"
       @addNewCar="getNewCarData">
-    /></NewCarModal>
-  </div>
+    /></NewCarModal> <!-- new car modal end -->
+  </div><!-- app end -->
 </template>
 
 <script>
