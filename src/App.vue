@@ -75,7 +75,7 @@ export default {
         },
         {
           title: '2021 Nissan Kicks',
-          price: 1800,
+          price: 950,
           imageUrl: 'https://www.netcarshow.com/Nissan-Kicks-2021-1600-08.jpg',
           persons: 5,
           doors: 5,

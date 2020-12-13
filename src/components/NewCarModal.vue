@@ -122,7 +122,7 @@ export default {
     font-size: var(--text-medium)
 }
 .modal__button--blue {
-    color: var(--grey-light);
+    color: var(--grey-lighter);
     background-color: var(--blue-dark);
 }
 .modal__button--blue:hover, .modal__button--white:hover {

@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card__image">
-            <img :src=image :alt=title>
+            <img :src="image" :alt="title + ' image'">
         </div> <!-- Image container end -->
         <div class="card__details">
             <h2 class="card__details__title">{{ title }}</h2>
@@ -55,6 +55,9 @@ export default {
     margin: 0 0 var(--spacing-medium) 0;
     background-color: white;
 }
+.card__image, .card__details{
+    width: 100%;
+}
 .card__delete__button {
     margin-top: 5px;
     border: none;
@@ -94,6 +97,7 @@ export default {
 }
 .card__book {
     /* this is also a flex container so that price is always forced to be displayed above button */
+    width: 35%;
     display: flex;
     flex-direction: column;
     align-self: flex-end;
