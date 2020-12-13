@@ -6,9 +6,9 @@
         <div class="card__details">
             <h2 class="card__details__title">{{ title }}</h2>
             <ul class="card__details__list">
-                <li class="card__details__list--item">{{ persons }}</li>
-                <li class="card__details__list--item">{{ doors }}</li>
-                <li class="card__details__list--item">{{ liters }} l/100km</li>
+                <li class="card__details__list--item"> <img class="card__details__list--persons" src="./../assets/icons/persons.svg" alt="persons icon"> {{ persons }}</li>
+                <li class="card__details__list--item"> <img class="card__details__list--doors" src="./../assets/icons/doors.svg" alt="persons icon"> {{ doors }}</li>
+                <li class="card__details__list--item"> <img class="card__details__list--liters" src="./../assets/icons/liters.svg" alt="persons icon"> {{ liters }} l/100km</li>
             </ul>
             <h3 class="card__details__description-title">
                 Description
@@ -73,6 +73,18 @@ export default {
     border: 1px solid var(--grey-medium);
     border-radius: var(--border-radius);
     padding: 0 var(--spacing-small) 0 var(--spacing-small);
+}
+.card__details__list--persons {
+    width: 11px;
+    height: auto;
+}
+.card__details__list--doors {
+    width: 15px;
+    height: auto;
+}
+.card__details__list--liters {
+    width: 13px;
+    height: auto;
 }
 .card__book {
     /* this is also a flex container so that price is always forced to be displayed above button */
