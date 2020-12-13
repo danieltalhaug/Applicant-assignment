@@ -25,6 +25,9 @@
         <p class="cards-error">{{ errorMessage }}</p>
       </section>
     </main>
+    <NewCarModal
+      @addNewCar="getNewCarData">
+    /></NewCarModal>
   </div>
 </template>
 
@@ -33,13 +36,15 @@
 import Header from './components/Header.vue'
 import Searchbar from './components/Searchbar.vue'
 import RentalCards from './components/RentalCards.vue'
+import NewCarModal from './components/NewCarModal.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
     Searchbar,
-    RentalCards
+    RentalCards,
+    NewCarModal
   },
   data () {
     return {
@@ -73,6 +78,7 @@ export default {
         }
       ],
       searchQuery: '',
+      newCar: {},
       errorMessage: 'Can\'t find a car based on your search, please try a different search.'
     }
   },
@@ -88,6 +94,11 @@ export default {
     setSearchInputValue (searchword) {
       // Gets the searchword from searchbar component and saves it. No mutated props!
       this.searchQuery = searchword
+    },
+    getNewCarData (formData) {
+      // adds the incoming formData from the NewCarModal to the cars array.
+      this.newCar = formData
+      this.cards.push(this.newCar)
     }
   }
 }
